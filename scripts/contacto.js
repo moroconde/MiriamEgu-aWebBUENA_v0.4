@@ -68,7 +68,7 @@
   if (btnMap && cover) {
     btnMap.addEventListener("click", function () {
       cover.outerHTML =
-        '<iframe title="Mapa de la consulta en Santander" src="https://maps.google.com/maps?q=Calle%20Juan%20de%20la%20Cosa%2015%2C%2039004%20Santander&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+        '<iframe title="Mapa de la consulta en Santander" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2900.5!2d-3.7944967!3d43.4636372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd494bcb6c9d564b%3A0xdf81d640b42628b1!2sMiriam%20Egu%C3%ADa%20M%C3%A9dico%20Nutrici%C3%B3n!5e0!3m2!1ses!2ses!4v1710000000000!5m2!1ses!2ses" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
     });
   }
 })();
