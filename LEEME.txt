@@ -1,0 +1,60 @@
+Miriam Eguía Nutrición — web para publicar
+==========================================
+
+Esta carpeta es la web completa lista para subir a IONOS (o cualquier hosting con PHP).
+
+Archivos principales
+--------------------
+  index.html          Inicio (carrusel de la consulta)
+  servicios.html
+  bonos.html          Bonos 5 y 10 (personalizar / descargar / imprimir)
+  sobre.html          Foto y trayectoria de Miriam
+  contacto.html       Formulario de cita (envía a me@miriameguianutricion.com)
+  aviso-legal.html
+  politica-cookies.html
+  enviar.php          Procesa el formulario (SMTP IONOS)
+  config.mail.php     Configuración del correo ← HAY QUE PONER LA CONTRASEÑA
+  css/                Bootstrap + estilos
+  scripts/            JS del menú, cita y bonos
+  imagenes/           Logos, fotos, medios (Onda Cero, SER…)
+
+Cómo hacer que el formulario de contacto funcione en IONOS
+----------------------------------------------------------
+1. Entra en tu panel de IONOS → Correo electrónico → Buzones.
+2. Busca el buzón: me@miriameguianutricion.com
+3. Anota o restablece la CONTRASEÑA de ese buzón.
+4. Abre el archivo config.mail.php con un editor de texto.
+5. Busca la línea:
+      'password'   => '',
+   y pon la contraseña entre las comillas, por ejemplo:
+      'password'   => 'TuContraseñaAqui',
+6. Guarda el archivo.
+7. Sube TODA la carpeta (o su contenido) por FTP a la raíz del dominio
+   (normalmente la carpeta httpdocs o public_html).
+   index.html debe quedar en la raíz.
+
+Datos SMTP que ya están configurados (no hace falta tocarlos):
+  Servidor:   smtp.ionos.es
+  Puerto:     587
+  Cifrado:    STARTTLS (tls)
+  Usuario:    me@miriameguianutricion.com
+  Destino:    me@miriameguianutricion.com
+
+El formulario:
+- Envía por AJAX (sin recargar la página)
+- Tiene protección anti-spam (honeypot)
+- Valida nombre, teléfono y aceptación de privacidad
+- Responde con mensaje de éxito o error en la misma página
+
+Cómo verla en local
+-------------------
+1. XAMPP / Laragon / similar: copia la carpeta a htdocs
+2. Arranca Apache + PHP
+3. Abre http://localhost/nombre-de-la-carpeta/
+
+Notas
+-----
+- El formulario NO funciona solo con “abrir el HTML” en el ordenador.
+  Necesita un servidor PHP (IONOS o XAMPP).
+- También se puede pedir cita por teléfono 648 125 035 o WhatsApp.
+- La foto de Miriam está en la página Sobre mí.
